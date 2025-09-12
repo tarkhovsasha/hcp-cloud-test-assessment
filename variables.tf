@@ -37,7 +37,7 @@ variable "vcs_workspace_name" {
 }
 
 variable "cli_workspaces_name_list" {
-  type        = list(any)
+  type        = list(string)
   default     = ["team-empire-ws", "team-republic-ws", "team-jedi-ws"]
   description = "List of CLI workspace names."
 }
