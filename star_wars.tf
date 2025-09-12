@@ -21,7 +21,7 @@ resource "tfe_project" "galaxy" {
 
 # Create a workspace with VCS-driven workflow
 resource "tfe_workspace" "vcs_ws" {
-  
+
   name           = var.vcs_workspace_name
   organization   = var.organization_name
   project_id     = tfe_project.galaxy.id

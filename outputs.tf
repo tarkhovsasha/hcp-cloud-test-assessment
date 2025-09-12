@@ -11,7 +11,7 @@ output "vcs_workspace_branch" {
 }
 
 output "cli_workspaces_list" {
-  value = [ for ws in tfe_workspace.cli_ws: ws.name ]
+  value = [for ws in tfe_workspace.cli_ws : ws.name]
 }
 
 /*
