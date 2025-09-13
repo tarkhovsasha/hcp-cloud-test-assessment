@@ -56,8 +56,6 @@ cd hcp-cloud-test-assessment
 
 ```sh
 export TF_VAR_github_app_installation_id='<your_github_app_installation_id_here>'
-export TF_VAR_aws_access_key_id='TEST_DUMMY_KEY_ID'
-export TF_VAR_aws_secret_access_key='TEST_DUMMY_SECRET'
 export TF_VAR_github_user='your_github_user_path_here'
 export TF_VAR_github_repo='your_github_repo_name_here'
 export TF_VAR_organization_name='your_hcp_org_name_here'
@@ -70,7 +68,15 @@ You may change it by setting:
 export TF_VAR_vcs_repo_branch='<your_github_branch_here>'
 ```
 
-It is recommended to leave default values for all other variables defined in variables.tf
+AWS cloud credentials are dummy values by default.
+You may supply real Cloud Credentials by setting:
+
+```sh
+export TF_VAR_aws_access_key_id='Your_key_id_here'
+export TF_VAR_aws_secret_access_key='Your_secret_here'
+```
+
+It is recommended to leave default values for all other variables as defined in `variables.tf` file.
 
 
 ### 4. Initialize directory 
@@ -93,14 +99,14 @@ Check there were 4 new workspaces created
 ![Workspaces created via TFE provoder](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/blob/hcp_org_workspaces.png?raw=true)
 
 
-Click on workspace `cli-team-jedi-ws` -> Variables
+Click on workspace `cli-team-empire-ws` -> Variables
 Check there is a variable set with three variables
 
 ![Variable set under CLI workspace](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/blob/hcp_workspace_variable_set.png?raw=true)
 
 
-Return back to Workspaces
-Click on workspace `vcs-the-force-ws` 
+Return back to the list of Workspaces
+Click the workspace `vcs-the-force-ws` 
 
 Navigate to Runs
 Check there are runs triggered from VCS
@@ -108,7 +114,10 @@ Check there are runs triggered from VCS
 ![VCS triggered runs under VCS workspace](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/blob/hcp_vcs_workspace_runs.png?raw=true)
 
 
-### 7. Optionally try to trigger a VCS run by commiting to the main branch in your VCS repo
+### 7. Optionally try to trigger a new VCS run by GitHub commit
+
+Initiate a new commit to the `main` branch in your GitHub repo
 
 Navigate to workspace `vcs-the-force-ws` -> Runs
+
 Check there is a new runs triggered by GitHub commit

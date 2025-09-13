@@ -39,12 +39,26 @@ variable "vcs_workspace_name" {
   type        = string
   default     = "the-force-ws"
   description = "Name of the VCS workspace."
+
+  validation {
+    condition     = length(var.vcs_workspace_name) > 4
+    error_message = "The workspace name value must be longer than 4 characters."
+  }
 }
 
 variable "cli_workspaces_name_list" {
   type        = list(string)
   default     = ["team-empire-ws", "team-republic-ws", "team-jedi-ws"]
   description = "List of CLI workspace names."
+
+  validation {
+    condition = alltrue([
+      for str in var.cli_workspaces_name_list : str != ""
+    ]) && length(var.cli_workspaces_name_list) == length(distinct([
+      for str in var.cli_workspaces_name_list : lower(str)
+    ]))
+    error_message = "All names must be non-empty and unique."
+  }
 }
 
 variable "default_aws_region" {
@@ -56,12 +70,14 @@ variable "default_aws_region" {
 variable "aws_access_key_id" {
   type        = string
   sensitive   = true
+  default     = "TEST_DUMMY_KEY_ID"
   description = "AWS credential key id"
 }
 
 variable "aws_secret_access_key" {
   type        = string
   sensitive   = true
+  default     = "TEST_DUMMY_SECRET"
   description = "AWS credential key secret"
 }
 
