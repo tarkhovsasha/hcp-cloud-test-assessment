@@ -113,9 +113,7 @@ resource "tfe_workspace_run" "initial_vcs_run" {
     manual_confirm = false
     wait_for_run   = false
   }
-  depends_on = [
-    tfe_workspace_variable_set.vcs_ws_varset
-  ]
+  # depends_on = tfe_workspace_variable_set.vcs_ws_varset
 }
 
 
