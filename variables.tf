@@ -22,7 +22,7 @@ variable "organization_name" {
 variable "project_name" {
   type        = string
   default     = "galaxy-far-away"
-  description = "The name of the project."
+  description = "Suffix for the name of the project."
 
   validation {
     condition     = length(var.project_name) > 4
@@ -40,6 +40,24 @@ variable "cli_workspaces_name_list" {
   type        = list(string)
   default     = ["team-empire-ws", "team-republic-ws", "team-jedi-ws"]
   description = "List of CLI workspace names."
+}
+
+variable "default_aws_region" {
+  type        = string
+  default     = "eu-central-1"
+  description = "Configure default aws region to be used"
+}
+
+variable "aws_access_key_id" {
+  type        = string
+  sensitive   = true
+  description = "AWS credential key id"
+}
+
+variable "aws_secret_access_key" {
+  type        = string
+  sensitive   = true
+  description = "AWS credential key secret"
 }
 
 /* variable "gitlab_group_path" {
