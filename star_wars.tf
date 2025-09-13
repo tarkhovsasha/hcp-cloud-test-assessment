@@ -36,7 +36,7 @@ resource "tfe_workspace" "vcs_ws" {
   auto_apply     = true
 
   vcs_repo {
-    identifier = "${var.github_user}/${var.project_name}-repo"
+    identifier = "${var.github_user}/${var.github_repo}"
     #oauth_token_id = data.tfe_oauth_client.client.oauth_token_id
     github_app_installation_id = var.github_app_installation_id
     branch                     = var.vcs_repo_branch

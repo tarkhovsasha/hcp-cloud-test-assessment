@@ -3,6 +3,11 @@ variable "github_user" {
   default = "tarkhovsasha"
 }
 
+variable "github_repo" {
+  type    = string
+  default = "galaxy-far-away-repo"
+}
+
 variable "github_app_installation_id" {
   type      = string
   sensitive = true
