@@ -105,6 +105,17 @@ resource "tfe_workspace_variable_set" "cli_ws_varset" {
   variable_set_id = tfe_variable_set.default_varset.id
 }
 
+# Initiate the first run of the workspace
+resource "tfe_workspace_run" "initial_vcs_run" {
+  workspace_id = tfe_workspace.vcs_ws.id
+
+  apply {
+    manual_confirm = false
+    wait_for_run   = false
+  }
+  # depends_on = tfe_workspace_variable_set.vcs_ws_varset
+}
+
 
 /* # Initialize and apply the HCP Terraform Simple Landing Zone module
 module "tfc-simple-lz" {
