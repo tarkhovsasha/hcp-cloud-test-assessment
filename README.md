@@ -27,14 +27,14 @@ If you don't have HCP Terraform organization yet, you need to create a new one.
 Login to your HCP Terraform account - https://app.terraform.io 
 - Navigate to Organizations -> Create organization
 
-![Create a new organization](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/hcp_create_org.png?raw=true)
+![Create a new organization](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/blob/hcp_create_org.png?raw=true)
 
 If you haven't authorized HCP with GitHub App OAuth, you need to authorize it.
 - navigate to your new Organization -> Settings -> Version Control: Providers 
 - click **Add a VCS Provider**
 - Select **GitHub App** as your VCS provider and follow steps to authorize with GitHub
 
-![Authorize HCP with GitHub App](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/configure_GitHub_app_as_VCS_provider.png?raw=true)
+![Authorize HCP with GitHub App](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/blob/configure_GitHub_app_as_VCS_provider.png?raw=true)
 
 Save the **GitHub App Installation Id** - this is your access key.
 If you previously authorized HCP Terraform with GitHub App, you can find the GitHub App Installation Id in Account Settigs -> Tokens under Github App OAuth Token
@@ -90,13 +90,13 @@ confirm run by typing yes
 Assuming apply was successful, open your oranization in HCP Terraform UI
 Check there were 4 new workspaces created
 
-![Workspaces created via TFE provoder](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/hcp_org_workspaces.png?raw=true)
+![Workspaces created via TFE provoder](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/blob/hcp_org_workspaces.png?raw=true)
 
 
 Click on workspace `cli-team-jedi-ws` -> Variables
 Check there is a variable set with three variables
 
-![Variable set under CLI workspace](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/hcp_workspace_variable_set.png?raw=true)
+![Variable set under CLI workspace](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/blob/hcp_workspace_variable_set.png?raw=true)
 
 
 Return back to Workspaces
@@ -105,7 +105,7 @@ Click on workspace `vcs-the-force-ws`
 Navigate to Runs
 Check there are runs triggered from VCS
 
-![VCS triggered runs under VCS workspace](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/hcp_vcs_workspace_runs.png?raw=true)
+![VCS triggered runs under VCS workspace](https://github.com/tarkhovsasha/hcp-cloud-test-assessment/blob/main/blob/hcp_vcs_workspace_runs.png?raw=true)
 
 
 ### 7. Optionally try to trigger a VCS run by commiting to the main branch in your VCS repo
